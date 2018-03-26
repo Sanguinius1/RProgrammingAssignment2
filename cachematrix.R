@@ -9,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
         ## mi stands for "matrix inverse"
         mi <- NULL
         
-       
+       ## definition of set and get functions
         set <- function(y){
                 x <<- y
                 mi <<- NULL
@@ -24,12 +24,13 @@ makeCacheMatrix <- function(x = matrix()) {
         getinverse <- function() mi
 
         
-    
+    ## define names for operators
         list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
 
 
-## chachSolve is a function that returns the inversed matrix of input "x".
+## chachSolve is a function that returns the inversed matrix of input "x". if the inverse is
+## already cached the message "getting cached data" will appear.
 
 cacheSolve <- function(x, ...) {
         
